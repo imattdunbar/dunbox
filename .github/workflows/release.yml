@@ -40,5 +40,5 @@ jobs:
       - name: Publish packages to npm
         run: |
           for dir in packages/*/; do
-            (cd "$dir" && bun pm pack && bunx npm publish --provenance ./*.tgz)
+            (cd "$dir" && bun run release && bun pm pack && bunx npm publish --provenance ./*.tgz)
           done
