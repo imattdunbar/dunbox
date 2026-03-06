@@ -17,6 +17,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -40,5 +46,5 @@ jobs:
       - name: Publish packages to npm
         run: |
           for dir in packages/*/; do
-            (cd "$dir" && bun run release && bun pm pack && bunx npm publish --provenance ./*.tgz)
+            (cd "$dir" && bun pm pack && npm publish --provenance ./*.tgz)
           done
