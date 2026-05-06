@@ -13,5 +13,17 @@ export default defineWorkspace([
       dts: true,
       exports: true
     }
+  },
+  {
+  name: 'ui',
+  root: 'packages/ui',
+  config: {
+    target: 'browser',
+    entry: ['src/index.ts'],
+    clean: true,
+    dts: true,
+    exports: true,
+    external: ['react', 'react-dom', 'tailwindcss']
   }
+}
 ])
