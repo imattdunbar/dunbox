@@ -29,7 +29,9 @@ export default defineWorkspace([
       'src/lib/*.ts',
     ],
     clean: true,
-    dts: false,
+    dts: {
+      inferTypes: true
+    },
     external: [
       'react',
       'react-dom',

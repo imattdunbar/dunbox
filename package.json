@@ -17,6 +17,7 @@
   "scripts": {
     "build": "bunup",
     "dev": "bunup --watch",
+    "dev:example": "bun --cwd packages/app-example dev",
     "release": "bumpp -r --commit --push --tag",
     "typecheck": "bun run --filter '*' typecheck"
   },
