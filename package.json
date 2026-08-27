@@ -15,8 +15,9 @@
   ],
   "type": "module",
   "scripts": {
+    "dev": "bun run --parallel build-watch dev:example",
     "build": "bunup",
-    "dev": "bunup --watch",
+    "build-watch": "bunup --watch",
     "dev:example": "bun --cwd packages/app-example dev",
     "ui": "bun --cwd packages/ui",
     "release": "bumpp -r --commit --push --tag",
