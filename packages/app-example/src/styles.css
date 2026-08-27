@@ -1,3 +1,4 @@
+@import 'tailwindcss';
 @import '@dunbox/ui/styles.css';
 
-@source './src/**/*';
+@source './';
