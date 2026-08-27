@@ -81,6 +81,8 @@ const CMD = <T,>(props: CMDProps<T>) => {
     propsOnOpenChange?.(val)
   }
 
+  // test
+
   const [query, setQuery] = useState('')
   const [highlightedId, setHighlightedId] = useState<string>()
 

@@ -7,62 +7,17 @@
     "dist"
   ],
   "exports": {
-    "./lib/utils": {
-      "import": {
-        "types": "./dist/lib/utils.d.ts",
-        "default": "./dist/lib/utils.js"
-      }
-    },
-    "./core/input": {
-      "import": {
-        "types": "./dist/core/input.d.ts",
-        "default": "./dist/core/input.js"
-      }
-    },
-    "./components/CMD": {
-      "import": {
-        "types": "./dist/components/CMD.d.ts",
-        "default": "./dist/components/CMD.js"
-      }
-    },
-    "./core/input-group": {
-      "import": {
-        "types": "./dist/core/input-group.d.ts",
-        "default": "./dist/core/input-group.js"
-      }
-    },
-    "./core/popover": {
-      "import": {
-        "types": "./dist/core/popover.d.ts",
-        "default": "./dist/core/popover.js"
-      }
-    },
-    "./core/combobox": {
-      "import": {
-        "types": "./dist/core/combobox.d.ts",
-        "default": "./dist/core/combobox.js"
-      }
-    },
-    "./core/dialog": {
-      "import": {
-        "types": "./dist/core/dialog.d.ts",
-        "default": "./dist/core/dialog.js"
-      }
-    },
-    "./core/button": {
-      "import": {
-        "types": "./dist/core/button.d.ts",
-        "default": "./dist/core/button.js"
-      }
-    },
-    "./core/textarea": {
-      "import": {
-        "types": "./dist/core/textarea.d.ts",
-        "default": "./dist/core/textarea.js"
-      }
-    },
-    "./styles.css": "./dist/styles.css",
-    "./package.json": "./package.json"
+    "./components/CMD": "./dist/components/CMD.js",
+    "./core/button": "./dist/core/button.js",
+    "./core/combobox": "./dist/core/combobox.js",
+    "./core/dialog": "./dist/core/dialog.js",
+    "./core/input": "./dist/core/input.js",
+    "./core/input-group": "./dist/core/input-group.js",
+    "./core/popover": "./dist/core/popover.js",
+    "./core/textarea": "./dist/core/textarea.js",
+    "./lib/utils": "./dist/lib/utils.js",
+    "./package.json": "./package.json",
+    "./styles.css": "./dist/styles.css"
   },
   "scripts": {
     "shadcn": "bunx --bun shadcn",

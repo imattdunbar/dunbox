@@ -15,9 +15,9 @@
   ],
   "type": "module",
   "scripts": {
-    "dev": "bun run --parallel build-watch dev:example",
-    "build": "bunup",
-    "build-watch": "bunup --watch",
+    "dev": "bun run --parallel dev:packages dev:example",
+    "build": "tsdown",
+    "dev:packages": "tsdown --watch",
     "dev:example": "bun --cwd packages/app-example dev",
     "ui": "bun --cwd packages/ui",
     "release": "bumpp -r --commit --push --tag",
@@ -30,9 +30,9 @@
   },
   "devDependencies": {
     "@types/bun": "catalog:",
-    "prettier": "^3.9.6",
     "bumpp": "^12.2.2",
-    "bunup": "^0.16.32",
+    "prettier": "^3.9.6",
+    "tsdown": "^0.22.14",
     "typescript": "catalog:"
   },
   "prettier": {
