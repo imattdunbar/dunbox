@@ -1,20 +1,11 @@
 {
   "name": "@dunbox/core",
-  "version": "0.0.2",
   "description": "Core stuff",
-  "homepage": "https://github.com/imattdunbar/dunbox/tree/main/packages/core#readme",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/imattdunbar/dunbox.git"
-  },
+  "version": "0.0.2",
+  "type": "module",
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -25,6 +16,15 @@
       }
     },
     "./package.json": "./package.json"
+  },
+  "homepage": "https://github.com/imattdunbar/dunbox/tree/main/packages/core#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imattdunbar/dunbox.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",

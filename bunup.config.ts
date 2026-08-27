@@ -3,48 +3,45 @@ import { copy } from 'bunup/plugins'
 
 // https://bunup.dev/docs/guide/workspaces
 
-export default defineWorkspace([
-  {
-    name: 'core',
-    root: 'packages/core',
-    config: {
-      sourceBase: "src",
-      target: 'node',
-      entry: ['src/index.ts'],
-      clean: true,
-      dts: true,
-      exports: true
-    }
-  },
-  {
-  name: 'ui',
-  root: 'packages/ui',
-  config: {
-    sourceBase: "src",
-    target: 'browser',
-    entry: [
-      'src/core/*.tsx',
-      'src/components/*.tsx',
-      'src/hooks/*.ts',
-      'src/lib/*.ts',
-    ],
-    clean: true,
-    dts: {
-      inferTypes: true
+export default defineWorkspace(
+  [
+    // Defaults: src/index.ts entry, ESM, dts generation, node target
+    {
+      name: 'core',
+      root: 'packages/core'
     },
-    external: [
-      'react',
-      'react-dom',
-      'react/jsx-runtime',
-      'react/jsx-dev-runtime',
-      'tailwindcss'
-    ],
-    // Manually define exports with /* in package.json
-    exports: false,
-    // Copy styles.css into dist
-    plugins: [
-      copy('src/styles.css').to('styles.css')
-    ]
+    {
+      name: 'ui',
+      root: 'packages/ui',
+      config: {
+        target: 'browser',
+        // sourceBase keeps dist/export keys flat (./core/button etc.)
+        sourceBase: './src',
+        // Raw Tailwind source must be byte-identical for consumer-side
+        // compilation; bunup's CSS pipeline would rewrite Tailwind at-rules
+        entry: ['src/**/*.ts', 'src/**/*.tsx'],
+        dts: {
+          inferTypes: true
+        },
+        external: [
+          'react',
+          'react-dom',
+          'react/jsx-runtime',
+          'react/jsx-dev-runtime',
+          'tailwindcss'
+        ],
+        // Copied CSS isn't auto-detected by exports generation
+        exports: {
+          customExports: () => ({
+            './styles.css': './dist/styles.css'
+          })
+        },
+        plugins: [copy('src/styles.css')]
+      }
+    }
+  ],
+  {
+    // Auto-generate and sync package.json exports on every build
+    exports: true
   }
-}
-])
+)

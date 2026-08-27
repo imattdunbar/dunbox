@@ -1,10 +1,8 @@
 import { HeadContent, Scripts, createRootRouteWithContext } from '@tanstack/react-router'
 import { RouterContext } from '@/router'
-import { defaultHead } from '@/core/utils/seo'
-import Devtools from '@/core/components/Devtools'
+import appCss from '@/styles.css?url'
 
 export const Route = createRootRouteWithContext<RouterContext>()({
-  head: defaultHead,
   shellComponent: RootDocument
 })
 
@@ -13,10 +11,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <link rel="stylesheet" href={appCss} />
       </head>
       <body>
         {children}
-        <Devtools />
         <Scripts />
       </body>
     </html>
