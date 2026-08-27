@@ -19,8 +19,6 @@
     "build": "tsdown",
     "dev:packages": "tsdown --watch",
     "dev:example": "bun --cwd packages/app-example dev",
-    "ui": "bun --cwd packages/ui",
-    "release": "bumpp -r --commit --push --tag",
     "typecheck": "bun run --filter '*' typecheck"
   },
   "catalog": {
